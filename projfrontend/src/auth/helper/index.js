@@ -1,21 +1,17 @@
 import { API } from "../../Backend";
 // API means: REACT_APP_BACKEND=http://localhost:4000/api/
 
-export const signup = user => {
+export const signup = (product) => {
     return fetch(`${API}/signup`,{
-        method:"POST",
+        method: "POST",
         headers: {
             Accept: "application/json",
-            "Content-Type": "application/json"
         },
-        body: JSON.stringify(user)
-    })
-    .then(response => {
-        return response.json();
-    })
-    .catch(err => console.log(err))
+        // product name is passes as string only
+        body: product
+    }).then(response => (
+        response.json() )).catch(err => console.log(err))
 }
-
 export const signin = user => {
     return fetch(`${API}/signin`,{
         method:"POST",
