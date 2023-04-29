@@ -1,0 +1,60 @@
+/* body{
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+} */
+.logo-img{
+    width: 100px;
+    height: 80px;
+    align-items: center;
+    margin-left: 20px;
+};
+
+.li-items{
+    list-style: none;
+    text-decoration: none;
+    
+
+}
+.li-items:hover{
+    background-color: yellow;
+    /* color: black; */
+    width: fit-content;
+    height: fit-content;
+    padding: 5px;
+    border-radius: 10px;
+}
+/* .nav-links:hover{
+    color: yellow;
+} */
+.container-menu{
+    display: flex;
+    justify-content: space-between;
+    background-color: black;
+    padding: 20px;
+}
+
+nav{
+   display: flex;
+   justify-content: space-between; 
+}
+.nav-header{
+    display: flex;
+    list-style: none;
+    gap: 20px;
+    padding: 20px;
+justify-content: space-between;
+/* margin-left: 250px; */
+}
+.li-items1{
+    list-style: none;
+    margin-left: 90px;
+    display: flex;
+    gap: 30px;
+}
+.nav-links{
+    text-decoration: none;
+    list-style: none;
+    color: white;
+}
+.nav-links:hover{
+color: black;
+}
