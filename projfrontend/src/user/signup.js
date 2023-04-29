@@ -1,91 +1,177 @@
 import React from 'react'
-import { useState } from 'react'
-import { Link } from 'react-router-dom';
+import { useState,useEffect } from 'react'
+import { Link,useNavigate } from 'react-router-dom';
 import "../styles/signup.css"
-import { signup } from '../auth/helper'
+import { signup,isAuthenticated } from '../auth/helper'
 export default function Signup() {
-    const [values, setValues] = useState({
-        name: "",
-        email: "",
-        password: "",
-        error: "",
-        success: false
-    })
-    const {name, email, password, success, error} = values;
-    const handleChange=name=>event=>{
-        setValues({...values,error:false,[name]:event.target.value})
+    const navigate= useNavigate();
+   //To add a product an user must be authenticated
+  const [error,setError]=useState(false);
+  const [success,setSuccess]=useState(false);
+  // const [error,setError]=useState(false);
+  const [values,setValues]=useState({
+    name:"",
+    email:"",
+    photo:"",
+    password:"",
+  
+
+    formData:new FormData(),
+
+    
+  });
+  //destructuring the values 
+  const {name,email,password,formData}=values;
+  
+
+ 
+
+  const handleChange=name=>event=>{
+
+    const value=name==="photo" ? event.target.files[0] : event.target.value;
+
+    formData.set(name,value);
+    setValues({...values,[name]:value,success:true});
+  };
+ 
+ 
+  const successMessage=()=>{
+    if(success){
+     
+        <div className="success">Succesfully signed Up</div>
+  }
+  }
+  const errorMessage=()=>{
+    if(error) {
+      return (
+          <div className="error">Failed to create product!!</div>
+      )
+  }
+  }
+
+  useEffect(()=>{
+    successMessage()
+  },[success])
+
+  useEffect(()=>{
+    errorMessage() 
+  },[error])
+
+  const onSubmit=event=>{
+
+    console.log("submitted");
+   event.preventDefault();
+   setValues({...values,error:"",loading:true});
+   signup(formData)
+   .then(data=>{
+    console.log(data)
+    if(data.error){
+      setValues({...values,error:data.error});
+
+      setTimeout(()=>{
+        setValues({...values,error:""})
+      },1000)
     }
-    const onSubmit = event => {
-        // to avoid auto submit
-        event.preventDefault()
+    else{
+        navigate("/");
+      setValues({
+        ...values,
+        name:"",
+       email:"",
+       password:""
+      }
+      )
 
-        setValues({...values, error: false})
+      
 
-        signup({name,email,password}).then(data => {
-            if(data.error){
-                setValues({...values,error:data.error,
-                success:false})
-            }
-            else{
-                setValues({...values,
-                        name:"",
-                    password:"",
-                error:"",
-            success:true})
-            }
-        }).catch(err=>{if(err) console.log("Signup Failed")})
+      setSuccess(true) 
+      
+      setTimeout(()=>{
+        setSuccess(false)
+      },1000)
     }
-    const errorMessage=()=>{
-        return(
-            <div className="error:alert" style={{display:error ? " " : "none"}}>
-                <h1>{error}</h1>
-            </div>
-        )
-    }
-    const successMessage=()=>{
-        return(
-            <div className="success:alert" style={{display:success ? " " : "none"}}>
-                <h1>SignedUp Successfully</h1>
-                <h3><Link to="/signin">Login here</Link></h3>
-            </div>
-        )
-    }
-    const signUpForm = () => (
-        <div className="signup-form">
-            <form className=''>
-            <h1>SignUp Form</h1>
-            <div>
-                <label for="name">Name</label>
-                
-                <input type="text" onChange={handleChange("name")} id="name" placeholder="Enter your name"/>
-            </div>
-            
-           <div>
-            <label for="name">Email</label>
-            <input type="text" onChange={handleChange("email")} id="name" placeholder="Enter your email"/>
+   });
 
-           </div>
-           <label for="password">Password</label>
-            <input type="password" onChange={handleChange("password")} id="password" placeholder="Enter password"/>
-           <div>
-            
-           </div>
-            
-            <button onClick={onSubmit} className='submitbutton'>Submit</button>
 
-       
-       </form>
 
-        </div>
-       
-    )
-  return (
-    <div>
-         {signUpForm()}
-         {errorMessage}
-         {successMessage}
+   
+   
+  };
+
+  const userform=()=>{
+   return(
+    <form className="product-form">
+   
+    <div className="form-group">
+      <label className="label-form">
+        Choose Photo
+      </label>
+        <input
+          onChange={handleChange("photo")}
+          type="file"
+          name="photo"
+          accept="image"
+          className="file-area"
+          placeholder="choose a file"
+        />
+     
     </div>
+    <div className="form-group">
+    <label className="label-form">
+        Name
+      </label>
+      <input
+        onChange={handleChange("name")}
+        name="photo"
+        className="form-control"
        
+        value={name}
+      />
+    </div>
+    <div className="form-group">
+    <label className="label-form">
+        Email
+      </label>
+      <input
+        onChange={handleChange("email")}
+        type="text"
+        className="form-control"
+     
+        value={email}
+      />
+    </div>
+    <label className="label-form">
+        Password
+      </label>
+    <div className="form-group">
+      <input
+        onChange={handleChange("password")}
+        type="text"
+        className="form-control"
+     
+        value={password}
+      />
+    </div>
+   
+    
+    
+    <button className='submit' onClick={onSubmit}>Submit</button>
+
+</form>
+   )
+  }
+  return(
+  
+  <div>
+     {successMessage()}
+     
+     {userform()}
+  </div>
+     
+     
+     
+     
     
   )
+
 }

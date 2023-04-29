@@ -46,8 +46,6 @@ const Menu = () => {
                        })
                     }}>Signout</span> </li></Fragment>
 
-                        
-                   
                     )
                 }
                 
