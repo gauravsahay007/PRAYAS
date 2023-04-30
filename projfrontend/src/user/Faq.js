@@ -24,6 +24,7 @@ export default function Faq() {
   const stringb=()=>{
     if(b) return (
       <p className='faq-ans'>
+        Prayaas is an EARNEST attempt to bring SUNSHINE in wearisome lives. It is a VOLUNTEER movement initiated by student fraternity of IIIT-Allahabad to AMELIORATE the LIFE of not so privileged kids.
          We provide basic education to the children, including reading,
          writing, and math skills. We also offer vocational training for
         older children who are interested in learning a trade.
@@ -35,9 +36,7 @@ export default function Faq() {
   const stringc=()=>{
     if(c) return (
       <p className='faq-ans'>
-         We provide basic education to the children, including reading,
-         writing, and math skills. We also offer vocational training for
-        older children who are interested in learning a trade.
+         You can contribute by sponsoring a child, by making general donation, by convincing your friends, company or other companies to provide corporate funding to HHIN. You can join us and provide voluntary services and there is no specific amount that should be donated. However all the programs have a detailed breakup of the expenditure.
       </p>
     )
   }
@@ -46,9 +45,7 @@ export default function Faq() {
   const stringd=()=>{
     if(d) return (
       <p className='faq-ans'>
-         We provide basic education to the children, including reading,
-         writing, and math skills. We also offer vocational training for
-        older children who are interested in learning a trade.
+         Yes, the website is safe for any kind of transaction. Also any information exchange is kept safe and in no condition gets disclosed. Also the payment gateway is a third party payment gateway recognized by the financial institutions under the government of India. So any transaction also is thoroughly secured.
       </p>
     )
   }
@@ -96,7 +93,7 @@ export default function Faq() {
         <Fragment className="question">
           <button className='btn-faq' onClick={submitb}>
            
-            <span>What is NGO and what is its mission? </span>
+            <span>What is Prayas? </span>
             <span>+</span>
           </button>
           
@@ -106,7 +103,7 @@ export default function Faq() {
         <Fragment className="question">
           <button className='btn-faq' onClick={submitc}>
            
-            <span>What is NGO and what is its mission? </span>
+            <span>How can I contribute to this organization? </span>
             <span>+</span>
           </button>
           
@@ -116,7 +113,7 @@ export default function Faq() {
         <Fragment className="question">
           <button className='btn-faq' onClick={submitd}>
            
-            <span>What is NGO and what is its mission? </span>
+            <span>Is the website safe to make online payments?</span>
             <span>+</span>
           </button>
           

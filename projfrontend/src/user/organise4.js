@@ -2,7 +2,8 @@ import React from 'react'
 import Menu from '../core/Menu'
 import pen from "../pen.jpg"
 import "../styles/suborganize.css"
-import meals from "../meals_served.png"
+// import meals from "../meals_served.png"
+// import s from "../s.jpg"
 import { useNavigate } from 'react-router-dom'
 export default function Organize4() {
   const navigate=useNavigate();
@@ -11,10 +12,10 @@ export default function Organize4() {
         <Menu/>
         <h4 className='organize1-h'>Pen is better than a sword.</h4>
         <img src={pen} alt="" className='organize1-im1'/>
-        <img src={meals} alt="" className='organize1-im2'/>
+        {/* <img height="80px" src={s} alt="" className='organize1-im2'/> */}
 
-        <h4 className='description'> <b> Each Meal Cost:</b> ₹60 <br/>
-        <b> Kitchens preparing midday meals:</b> BH3 Mess </h4>
+        <h4 className='description'> <b> Each pen Cost:</b> ₹10 <br/>
+        <b> Stationery Shop:</b> ABC </h4>
 
         <button onClick={()=>{
         return (navigate("/donate"))

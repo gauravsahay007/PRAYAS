@@ -10,7 +10,14 @@
     margin: auto;
     border-radius: 2px;
 }
-
+.organize2-im2{
+    display: block;
+    margin: auto;
+    width: 80vw;
+    height: 530px;
+    margin-top: 20px;
+    border-radius: 2px;
+}
 .organize1-im2{
     display: block;
     margin: auto;
