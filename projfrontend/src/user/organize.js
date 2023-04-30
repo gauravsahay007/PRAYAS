@@ -14,7 +14,7 @@ export default function Organize() {
         <Menu/>
         
 
-            <div className="row">
+            <div className="rowO">
             <button className='tap-btn' >
         <img src={breakfast} alt="" />
         <p>Organize a breakfast 
@@ -28,7 +28,7 @@ export default function Organize() {
             </div>
 
             <div className="schemes">
-            <div className="row">
+            <div className="rowO">
             <button className='tap-btn'>
         <img src={mid_day} alt="" />
         <p>Organize a mid-day meal</p>
@@ -41,7 +41,7 @@ export default function Organize() {
     </button>
             </div>
    
-   <div className="row">
+   <div className="rowO">
    <button className='tap-btn'>
         <img src={teach} alt="" />
         <p>Donate for School kits</p>
@@ -53,7 +53,7 @@ export default function Organize() {
     </button>
    </div>
 
-   <div className="row">
+   <div className="rowO">
    <button className='tap-btn'>
         <img src={pen} alt="" />
         <p>Organize stationary distribution</p>

@@ -41,7 +41,7 @@ header ul{
     height: 45px;
 }
 
-.grid-collection-product{
+.grid-collection-event{
     display: flex;
     flex-direction: column;
     gap: 70px;

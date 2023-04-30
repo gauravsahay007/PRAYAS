@@ -24,7 +24,7 @@ export default function Events() {
 
   return (
     <div>
-        <div className="grid-collection-product">
+        <div className="grid-collection-event">
         <Menu/>
        {events.map((prod,index)=>{
            return (

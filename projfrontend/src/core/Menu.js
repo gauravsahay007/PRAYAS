@@ -2,6 +2,7 @@ import React, { Fragment } from "react";
 import { Link,useNavigate} from "react-router-dom";
 import "../styles/menu.css";
 import { isAuthenticated,signout } from "../auth/helper";
+
 import logo from '../logo.png'
 
  
@@ -37,6 +38,8 @@ const Menu = () => {
                     </Fragment>
                 )}
 
+                {isAuthenticated() && isAuthenticated().user.role===1 && ( <li className="li-items"> <Link className="nav-links" to="/admin/dashboard">Admin Dashboard</Link> </li>)}
+
                 {
                     isAuthenticated() && (
                         
@@ -48,15 +51,7 @@ const Menu = () => {
 
                     )
                 }
-                
-                    
-                
-                    
-              
 
-            
-                    
-            
 
             </ul>
         </nav>

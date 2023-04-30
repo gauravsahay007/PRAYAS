@@ -1,45 +1,17 @@
 
 
-body{
-    font-family: 'Explora', cursive;
-font-family: 'Poppins', sans-serif;
- background-color: rgb(240,244,245);
- font-family: 'Explora', cursive;
-font-family: 'IBM Plex Sans', sans-serif;
-
-}
-
-header{
-    margin-top: 20px;
-    display: flex;
-    justify-content: space-between;
-    margin-left: 100px;
-    margin-right: 100px;
-}
-
-nav ul{
-    margin-top: 20px;
-    display: flex;
-    list-style: none;
-    gap: 3em;
-}
-
-nav li a{
-    text-decoration: none;
-    color: black;
-    font-weight: 900;
-}
-
-main{
+.main{
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     margin-top: 100px;
+    margin: auto;
+    margin-top: 100px;
    
 }
 
-textarea{
+.form-input-category{
     resize: none;
     border-radius: 20px;
     border: none;
@@ -47,17 +19,26 @@ textarea{
     font-family: 'Poppins', sans-serif;
     box-shadow: 0 0 10px rgb(235, 232, 232);
     padding-top: 10px;
+    width:450px;
+    height: 50px;
+    font-size: 20px;
+   
+
 }
 
-form{
+.create-category-form{
     width: 350px;
     box-shadow: 0 0 10px black;
     border-radius: 10px;
     padding: 20px;
     display: flex;
     flex-direction: column;
-
+    margin: auto;
+    margin-top: 100px;
+    width: 500px;
+    height: 200px;
     gap: 15px;
+    padding-bottom:5px;
     margin-bottom: 10px;
    
 }
@@ -65,17 +46,16 @@ form{
 form input{
     border-radius: 20px;
     border: none;
-    height: 40px;
-    font-family: 'Poppins', sans-serif;
+    height: 40px;font-family: 'Poppins', sans-serif;
     box-shadow: 0 0 10px rgb(235, 232, 232);
     padding-left: 20px;
     margin-top: 5px;
 }
 
-form button{
-    
+.submit-category{
+    cursor: pointer;
     color: white;
-    background-color:#20BC7E ;
+    background-color:#FF3300 ;
     border: none;
     font-size: 1.5em;
     font-weight: 600;
@@ -83,8 +63,8 @@ form button{
     height: 50px;
     margin: auto;
     padding: 10px;
-    border-radius: 100px;
     cursor: pointer;
+    border-radius: 100px;
 }
 
 
@@ -94,13 +74,23 @@ form div{
     flex-direction: column;
 }
 
-form h1{
-    margin: auto;
-    font-size: 2.5em;
+.label-form{
+   font-size: 30px;
+    margin-left: 5px;
 }
-form{
-    /* display: block; */
-    font-family: 'Poppins', sans-serif;
-    margin: auto;
-    margin-top: 50px;
+
+.success{
+    background-color: #6cfc9e;
+    font-size: 25px;
+    margin: 20px;
+    padding: 10px;
+    text-align: center;
+}
+
+.error{
+    background-color: #FF6263;
+    font-size: 25px;
+    margin: 20px;
+    padding: 10px;
+    text-align: center;
 }

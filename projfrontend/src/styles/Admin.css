@@ -1,0 +1,130 @@
+.admin-panel{
+    display: flex;
+    
+    gap: 10px;
+    background-color: #ffffff;
+    margin-left: 100px;
+    margin-right: 50px;
+    margin-bottom: 100px;
+    margin-top: 50px;
+}
+
+.left-options{
+   color: white;
+    background-color: #0A3F69;
+   text-align: center;
+   padding: 20px;
+   width: 40vw;
+   border-radius: 5px;
+   
+}
+
+.left-options li{
+    list-style: none;
+}
+
+
+.left-list li{
+    background-color: #FF3300;
+    margin: 20px;
+    padding: 10px;
+    border-radius: 5px;
+    position: relative;
+    right: 20px;
+    cursor: pointer;
+
+    
+}
+
+.left-list li:hover{
+    background-color: #22CB5C;
+    cursor: pointer;
+    border: 2px solid black;
+    margin: 20px;
+    padding: 10px;
+    border-radius: 5px;
+    position: relative;
+    right: 20px;
+    
+}
+
+
+
+.link{
+    text-decoration: none;
+    color: white;
+    font-size: 15px;
+}
+
+.left-head{
+    font-family: 'Poppins', sans-serif;
+    font-size: 35px;
+}
+
+
+.right-head{
+    font-family: 'Poppins', sans-serif;
+    font-size: 35px;
+}
+
+.right-details{
+    display: flex;
+    flex-direction: column;
+     background-color:#0A3F69;
+     text-align: center;
+     color: white;
+     padding: 20px;
+     width: 40vw;
+     border-radius: 5px;
+     
+ }
+
+ .right-list{
+    list-style: none;
+  
+ }
+
+ 
+
+ .right-list li span{
+    display: flex;
+    gap: 10px;
+    padding: 10px;
+    background-color: #ffffff;
+    font-size: 12px;
+    width: 100%;
+    align-items: center;
+    
+    position: relative;
+    right: 30px;
+    margin: 10px;
+    padding: 1px;
+    border-radius: 10px;
+    
+ }
+
+ .admin-subdetail-key{
+    font-size: 16px;
+    font-family: 'Poppins', sans-serif;
+    background-color: #F4BE2C;
+    width: fit-content;
+    padding: 10px;
+    
+    border-radius: 5px;
+    margin-left: 20px;
+ }
+
+ .admin-subdetail-value{
+    font-size: 16px;
+    font-family: 'Poppins', sans-serif;
+    background-color: #4DD637;
+    width: fit-content;
+    padding: 10px;
+    border-radius: 5px;
+ }
+
+ .colon{
+
+   color: black;
+    font-size: 30px;
+ }
