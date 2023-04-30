@@ -23,25 +23,25 @@ export default function Base() {
             <li>+91-1287654390</li>
           </ul>
         
-        </div>
-        <div ><ul className='ul2'>
+        </div >
+        <div className='whole'><ul className='ul2'>
             <a href=" ">
-              <img src={twitter} alt="" />
+              <img className='imggg' src={twitter} alt="" />
             </a>
             <a href=" ">
-              <img src={fb} alt="" />
+              <img  className='imggg' src={fb} alt="" />
             </a>
             <a href=" ">
-              <img src={ig} alt="" />
+              <img  className='imggg' src={ig} alt="" />
             </a>
           </ul>
           <div className='subs'>
             <h3>Subscribe to our Newsletter</h3>
-            <textarea name="text" id="subscribe" cols="" rows="" placeholder='Enter your email'></textarea>
+            <textarea name="text" id="subscribe" cols="55" rows="" placeholder='Enter your email'></textarea>
           </div>
           </div>
         <div className='f2'>
-          <ul>
+          <ul >
             <li>
               <h2>Company</h2>
               <li>About Us</li>

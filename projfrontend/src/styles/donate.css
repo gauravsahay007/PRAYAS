@@ -1,4 +1,16 @@
- .qr img{
-    width: 1050px;
-    height: 1050px;
+ img{
+    width: 150px;
+    align-items: center;
+    height: 150px;
+    margin-left: 70px;
+
+}
+.box{
+    align-items: center;
+    margin-left: 500px;
+    padding: 50px;
+    justify-content: center;
+}
+h3{
+    font-size: 30px;
 }

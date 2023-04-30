@@ -1,9 +1,11 @@
 import React from 'react'
 import qr from "../qr.png"
+import { useNavigate } from 'react-router-dom';
 export default function Donate() {
+    const navigate = useNavigate();
   return (
     <div>
-        <div className='form'>
+        {/* <div className='form'> */}
       <form>
             <h1>Donation Form</h1>
             <div>
@@ -25,13 +27,16 @@ export default function Donate() {
            
           
 
-            <button>Submit</button>
+            <button onClick={()=>{
+        return (navigate("/scanner"))
+    }} >Scan Here ↓ </button>
+    {/* <button>Scan Here ↓ </button> */}
 
-       </form>
-       </div >
        <div className='qr'>
         <img className='qr1'  src={qr} alt="" />
        </div>
+       </form>
+       {/* </div > */}
     </div>
   )
 }
