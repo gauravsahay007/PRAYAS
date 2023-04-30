@@ -1,0 +1,56 @@
+.schemes{
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    background-color: #ffffff;
+    justify-content: center;
+    align-items: left;
+    padding-left: 50px;
+    padding-top: 40px;
+    padding-right: 50px;
+    
+}
+
+.tap-btn{
+    border-radius: 5px;
+    width: 300px;
+    height: 300px;
+    border: 1px solid black;
+   
+}
+
+img{
+    border-radius: 40px;
+}
+
+p{
+    color: black;
+    font-size: 20px;
+    font-weight: 200;
+}
+
+.rowO{
+    display: flex;
+    gap: 50px;
+    justify-content: center;
+    align-items: center;
+    background-color: #F0F4F5;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    border-radius: 10px;
+}
+
+.helpus{
+    background-color: #86C540;
+    display: block;
+    height: 100px;
+    width: 200px;
+    border-radius: 10px;
+    font-size: 20px;
+    font-weight: 500;
+}
+
+button:hover{
+    cursor: pointer;
+}
+

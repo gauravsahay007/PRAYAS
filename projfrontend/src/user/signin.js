@@ -8,8 +8,8 @@ import { isAuthenticated } from '../auth/helper'
 import { authenticate } from '../auth/helper'
 export default function Signin() {
   const [values, setValues] = useState({
-    email: "gaurav@gmail.com",
-    password: "12345",
+    email: "",
+    password: "",
     error: "",
     loading:false,
     Redirect:false
@@ -60,7 +60,7 @@ const performRedirect = (Redirect) => {
           return <Navigate replace to="/admin/dashboard"></Navigate>
       }
       else{
-          return <Navigate replace to="/user/dashboard"></Navigate>
+          return <Navigate replace to="/"></Navigate>
       }
   }
   

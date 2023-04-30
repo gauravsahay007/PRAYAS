@@ -1,21 +1,21 @@
-h1,
-h2,
-h3,
-h4 {
-  letter-spacing: 0.1rem;
+
+h2
+ {
+  font-size: 40px;
   text-transform: capitalize;
-  line-height: 1.25;
-  margin-bottom: 0.75rem;
+  
 }
 .section {
-  width: 90vw;
-  margin: 5rem auto;
-  max-width: 1170px;
+  width: 100vw;
+  
+  max-width: 100vw;
+  background-color: #ffffff;
+  border-radius: 10px;
 }
 
 @media screen and (min-width: 992px) {
   .section {
-    width: 95vw;
+    width: 100vw;
   }
 }
 
@@ -34,6 +34,7 @@ h4 {
   position: relative;
   display: flex;
   overflow: hidden;
+  
 }
 
 article {
@@ -73,14 +74,20 @@ article h4 {
   margin-bottom: 0.25rem;
 }
 .title {
+  display: block;
   text-transform: capitalize;
-  margin-bottom: 0.75rem;
+  
+  background-color: #fff;
+  position: relative;
+  bottom: 40px;
   color: hsl(209, 34%, 30%);
+  
 }
 
 .title {
   text-align: center;
   margin-bottom: 2rem;
+  font-size: 10px;
 }
 .title h2 {
   display: flex;
@@ -90,11 +97,10 @@ article h4 {
 }
 
 .text {
-  max-width: 35em;
-  margin: 0 auto;
-  margin-top: 2rem;
-  line-height: 2;
-  color: hsl(210, 22%, 49%);
+  color: black;
+  display: block;
+  margin-top: 10px;
+  margin-bottom: 10px;
 }
 
 .prev,
@@ -135,3 +141,14 @@ article h4 {
     font-size: 1.5rem;
   }
 }
+
+.description{
+  background-color: #F0F4F5;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  margin-top: 8px;
+ 
+}
+

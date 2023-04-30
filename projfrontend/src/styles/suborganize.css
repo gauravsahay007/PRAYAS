@@ -1,0 +1,46 @@
+.organize1-h{
+    text-align: center;
+    margin-top: 40px;
+    margin-bottom: 40px;
+    font-size: 20px;
+}
+
+.organize1-im1{
+    display: block;
+    margin: auto;
+    border-radius: 2px;
+}
+
+.organize1-im2{
+    display: block;
+    margin: auto;
+    width: 80vw;
+    height: 130px;
+    margin-top: 20px;
+    border-radius: 2px;
+}
+
+.description{
+    display: block;
+    margin-left: 150px;
+    width: 80vw;
+    height: 50px;
+    background-color: #fff;
+}
+
+.Donate{
+    width: 150px;
+    height: 50px;
+    background-color:#86C540;
+    display: block;
+    margin: auto;
+    border-radius: 5px;
+    margin-top: 5px;
+    font-size: 20px;
+    color: #fff;
+    margin-bottom: 20px;
+} 
+
+div{
+    background-color: #fff;
+}
