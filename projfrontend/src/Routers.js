@@ -22,7 +22,7 @@ import AddProduct from "./admin/AddProduct";
 import ManageProduct from "./admin/ManageProduct";
 import UpdateCategory from "./admin/UpdateCategory";
 import UpdateProduct from "./admin/UpdateProduct";
-
+import Scan from "./user/scan";
 import AdminDashboard from "./user/AdminDashboard";
 import Aboutus from "./core/Aboutus";
 import Donate from "./user/Donate";
@@ -45,7 +45,7 @@ export default function Routers(){
  <Route path="/user/organize/organize4" exact element={<Organize4/>}/>
  <Route path="/donate" exact element={<Donate/>}/>
  <Route path="/alumni" exact element={<Alumni/>}/>
-
+ <Route path="/scanner" exact element={<Scan/>}/>
  <Route path="/admin/create/category" exact element={<AddCategory/>}></Route>
 
 <Route path="/admin/category" exact element={<ManageCategories/>}></Route>

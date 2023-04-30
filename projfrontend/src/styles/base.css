@@ -1,10 +1,15 @@
 .ul2{
     display: flex;
     gap: 20px;
+    background-color:#1A4194;
 }
-img{
+.imggg{
     height: 40px;
     width: 40px;
+}
+.f1{
+    background-color:#1A4194;
+    color: white;
 }
 .complete{
     background-color: #1A4194;
@@ -23,7 +28,15 @@ li{
 h3{
     font-size: 10px;
 }
+.whole{
+    background-color:#1A4194;
+}
 .subs{
     justify-items: center;
-
+    background-color: #1A4194;
+color: white;
+}
+.f2{
+    background-color: #1A4194; 
+    color: white;
 }
