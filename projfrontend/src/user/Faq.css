@@ -4,11 +4,6 @@
     box-sizing: border-box;
 }
 
-body{
-    font-family: 'Open Sans', sans-serif;
-    color: #fff;
-    background-color: #000;
-}
 
 .title{
     font-size: 50px;
@@ -29,7 +24,7 @@ body{
 }
 .btn-faq{
     width: 100%;
-    background-color: #000;
+    background-color: #0A3F69;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -40,6 +35,8 @@ body{
     color: #fff;
     font-weight: 700;
     cursor: pointer;
+    border-radius: 5px;
+    margin: 4px;
 }
 .question p{
     font-size: 22px;
@@ -66,4 +63,7 @@ body{
 
 p{
     color: white;
+}
+section{
+    margin-bottom: 50px;
 }
