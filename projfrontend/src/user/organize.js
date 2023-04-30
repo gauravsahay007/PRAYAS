@@ -59,7 +59,7 @@ export default function Organize() {
         <p>Organize stationary distribution</p>
     </button>
     <button className='helpus'  onClick={()=>{
-        return (navigate("/user/organize/organize"))
+        return (navigate("/user/organize/organize4"))
     }}>
         Organize
     </button>

@@ -3,7 +3,10 @@ import Menu from '../core/Menu'
 import breakfast from "../organize1.png"
 import "../styles/suborganize.css"
 import meals from "../meals_served.png"
+import Donate from './Donate'
+import { useNavigate } from 'react-router-dom'
 export default function Organize1() {
+  const navigate = useNavigate();
   return (
     <div>
         <Menu/>
@@ -16,7 +19,9 @@ export default function Organize1() {
         <h4 className='description'> <b> Each Meal Cost:</b> ₹15 <br/>
         <b> Kitchens preparing breakfast:</b> BH3 Mess </h4>
 
-       <button className='Donate'>Donate</button>
+       <button onClick={()=>{
+        return (navigate("/donate"))
+    }} className='Donate'>Donate</button>
 
     </div>
   )

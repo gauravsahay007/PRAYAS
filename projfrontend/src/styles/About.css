@@ -1,0 +1,33 @@
+
+.image img {
+    width: 100%;
+    height: 60%;
+
+        opacity: 1;
+   
+    }
+    
+    .image {
+    position: relative;
+    height: 20%;
+    }
+    
+    .image figcaption{
+    position: absolute;
+    padding: 20px;
+    margin: auto;
+    width: 580px;
+    top: 10%;
+    bottom: 50%;
+    left: 10%;
+    }
+    .mission, .vision{
+        color: #b54253
+    }
+    .mis1, .vis1 , .who{
+        padding: 20px;
+    }
+   .comptext{
+        padding: 20px;
+        border-radius: 20px;
+    }
