@@ -1,11 +1,33 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, Fragment } from "react";
+import { getAllEvents } from "../admin/EventAPI";
 
-import data from "../data";
 import "../styles/Slider.css";
+import SliderImagehelper from "./SliderImagehelper"
 const Slider = () => {
-  const [people] = useState(data);
-  const [index, setIndex] = useState(0);
+  const [error,setError]=useState(false);
+    const [people,setPeople]=useState([]);
 
+  const loadAllEvents=()=>{
+    getAllEvents().then(data=>{
+        console.log(data); 
+      if(data.error){
+        setError(data.error);
+      }
+      else{
+        console.log(data.events);
+        setPeople(data.events);
+      } 
+    })
+  }
+  useEffect(()=>{ 
+    loadAllEvents()
+  },[])
+  
+  
+  
+  const [index, setIndex] = useState(0);
+  
+ 
   useEffect(() => {
     const lastIndex = people.length - 1;
     if (index < 0) {
@@ -25,14 +47,16 @@ const Slider = () => {
     };
   }, [index]);
 
+  
+
   return (
     <section className="section">
       <div className="title">
-        <h2>top leader</h2>
+        <h2>PRAYAS Events</h2>
       </div>
       <div className="section-center">
         {people.map((item, indexPeople) => {
-          const { id, image, name, title, quote } = item;
+          const { name,eventinfo,timeline,id,photo } = item;
           let position = "nextSlide";
           if (indexPeople === index) {
             position = "activeSlide";
@@ -45,10 +69,16 @@ const Slider = () => {
           }
           return (
             <article className={position} key={id}>
-              <img src={image} alt={name} className="person-img" />
-              <h4>{name}</h4>
-              <p className="title">{title}</p>
-              <p className="text">{quote}</p>
+             <SliderImagehelper prod={item}/>
+             <p className="text"><h1>{name}</h1></p>
+           <div className="description">
+          
+              <p className="text"> {eventinfo}</p>
+              <p className="text"> {timeline}</p>
+           </div>
+             
+            
+            
             </article>
           );
         })}

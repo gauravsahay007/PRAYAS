@@ -2,6 +2,7 @@ import React, { Fragment } from "react";
 import { Link,useNavigate} from "react-router-dom";
 import "../styles/menu.css";
 import { isAuthenticated,signout } from "../auth/helper";
+
 import logo from '../logo.png'
 
  
@@ -25,8 +26,8 @@ const Menu = () => {
                 <li className="li-items"><Link to="/" className="nav-links">About Us</Link></li>
 
                 <li className="li-items"><Link to="/user/events" className="nav-links">Events</Link></li>
-                <li className="li-items"><Link to="/" className="nav-links">Organise an event</Link></li>
-                <li className="li-items"><Link to="/" className="nav-links">Alumini Section</Link></li>
+                <li className="li-items"><Link to="/user/organize/event" className="nav-links">Organise an event</Link></li>
+                <li className="li-items"><Link to="/alumni" className="nav-links">Alumini Section</Link></li>
                 <li className="li-items"><Link to="/user/faq" className="nav-links">FAQ</Link></li>
                 
                 {!isAuthenticated() && (
@@ -36,6 +37,8 @@ const Menu = () => {
                         <li className="li-items"> <Link className="nav-links" to="/signin">SignIn</Link> </li>
                     </Fragment>
                 )}
+
+                {isAuthenticated() && isAuthenticated().user.role===1 && ( <li className="li-items"> <Link className="nav-links" to="/admin/dashboard">Admin Dashboard</Link> </li>)}
 
                 {
                     isAuthenticated() && (
@@ -48,15 +51,7 @@ const Menu = () => {
 
                     )
                 }
-                
-                    
-                
-                    
-              
 
-            
-                    
-            
 
             </ul>
         </nav>

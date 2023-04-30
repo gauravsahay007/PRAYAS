@@ -12,7 +12,7 @@ export default function Faq() {
 
   const stringa=()=>{
     if(a) return (
-      <p>
+      <p className='faq-ans'>
          We provide basic education to the children, including reading,
          writing, and math skills. We also offer vocational training for
         older children who are interested in learning a trade.
@@ -23,7 +23,7 @@ export default function Faq() {
   
   const stringb=()=>{
     if(b) return (
-      <p>
+      <p className='faq-ans'>
          We provide basic education to the children, including reading,
          writing, and math skills. We also offer vocational training for
         older children who are interested in learning a trade.
@@ -34,7 +34,7 @@ export default function Faq() {
   
   const stringc=()=>{
     if(c) return (
-      <p>
+      <p className='faq-ans'>
          We provide basic education to the children, including reading,
          writing, and math skills. We also offer vocational training for
         older children who are interested in learning a trade.
@@ -45,7 +45,7 @@ export default function Faq() {
   
   const stringd=()=>{
     if(d) return (
-      <p>
+      <p className='faq-ans'>
          We provide basic education to the children, including reading,
          writing, and math skills. We also offer vocational training for
         older children who are interested in learning a trade.
@@ -87,7 +87,7 @@ export default function Faq() {
           <button className='btn-faq' onClick={submita} >
            
             <span>What is NGO and what is its mission? </span>
-            <div>+</div>
+            <span>+</span>
           </button>
           
           {stringa()} 
@@ -97,7 +97,7 @@ export default function Faq() {
           <button className='btn-faq' onClick={submitb}>
            
             <span>What is NGO and what is its mission? </span>
-            <div>+</div>
+            <span>+</span>
           </button>
           
           {stringb()}
@@ -107,7 +107,7 @@ export default function Faq() {
           <button className='btn-faq' onClick={submitc}>
            
             <span>What is NGO and what is its mission? </span>
-            <div>+</div>
+            <span>+</span>
           </button>
           
           {stringc()}
@@ -117,7 +117,7 @@ export default function Faq() {
           <button className='btn-faq' onClick={submitd}>
            
             <span>What is NGO and what is its mission? </span>
-            <div>+</div>
+            <span>+</span>
           </button>
           
           {stringd()} 
