@@ -25,7 +25,7 @@ const Menu = () => {
                 <li className="li-items"><Link to="/" className="nav-links">About Us</Link></li>
 
                 <li className="li-items"><Link to="/user/events" className="nav-links">Events</Link></li>
-                <li className="li-items"><Link to="/" className="nav-links">Organise an event</Link></li>
+                <li className="li-items"><Link to="/oraganiseevent" className="nav-links">Organise an event</Link></li>
                 <li className="li-items"><Link to="/" className="nav-links">Alumini Section</Link></li>
                 <li className="li-items"><Link to="/user/faq" className="nav-links">FAQ</Link></li>
                 
