@@ -5,6 +5,7 @@ import { Navigate } from "react-router-dom";
 import { Link } from "react-router-dom";
 import { getAllCategories,createProduct } from "./helper/adminapicalls";
 import "../styles/CreateProduct.css"
+import Menu from "../core/Menu";
 const AddProd=()=>{
   //To add a product an user must be authenticated
   const {user,token}=isAuthenticated();
@@ -44,6 +45,7 @@ const AddProd=()=>{
     })
     
   }
+  
 //useeffect is a react hook that lets you synchronize a component with an externa system
 //useEffect(setup,dependencies?)
 //setup code runs when our component is added to the page 
@@ -222,8 +224,9 @@ preload();
   }
   return(
   
-    <Base title="Add a product here!">
-      <Link to="/admin/dashboard" className="links">Admin Home</Link>
+   <Base>
+    
+     
       {successMessage()}
       {errorMessage()}
       {productform()}

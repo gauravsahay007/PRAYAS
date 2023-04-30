@@ -87,7 +87,7 @@ exports.photo = (req, res, next) => {
 exports.deleteProduct=(req,res)=>{
     const prod=req.product;
 //The remove() function is used to remove the documents from the database according to the condition
-    prod.remove().then((product,err)=>{
+    prod.deleteOne().then((product,err)=>{
         res.json({
             message:"Deleted successfully",
             product

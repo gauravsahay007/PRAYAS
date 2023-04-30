@@ -26,6 +26,7 @@ import Scan from "./user/scan";
 import AdminDashboard from "./user/AdminDashboard";
 import Aboutus from "./core/Aboutus";
 import Donate from "./user/Donate";
+import Merch from "./core/Merch";
 export default function Routers(){
     return(
  <BrowserRouter>
@@ -41,6 +42,7 @@ export default function Routers(){
  <Route path="/user/organize/organize1" exact element={<Organize1/>}/>
  <Route path="/user/organize/organize2" exact element={<Organize2/>}/>
  <Route path="/user/organize/organize3" exact element={<Organize3/>}/>
+ <Route path="/user/merch" exact element={<Merch/>}/>
 
  <Route path="/user/organize/organize4" exact element={<Organize4/>}/>
  <Route path="/donate" exact element={<Donate/>}/>

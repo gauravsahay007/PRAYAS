@@ -113,12 +113,11 @@ const UpdateCategoryF = () => {
                 {successMessageCreated()}
                 {errorMessage()}
 
-<div className="container">
+<div >
               
-                 <div className="left">
-           
+                
             
-           <form>
+           <form className="uc">
           
           <div className="form-group">
           <label className='label-form'>
@@ -147,19 +146,9 @@ const UpdateCategoryF = () => {
           <button onClick={onSubmit}>Submit</button>
       </form>
    
-      </div>
+     
       
-      <div className="right">
-            <h1>{name} Subcategories</h1>
-      <div className="sub">
-            { subcategory.map((i,index) =>
-                    ( 
-                    
-                    <div key={index} >{i} </div>
-                     ))
-            }  
-            </div>
-            </div>
+   
 
         </div>
             </div>

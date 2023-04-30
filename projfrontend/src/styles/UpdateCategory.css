@@ -45,3 +45,11 @@
 
     margin: 20px;
 }
+
+.uc{
+    display: flex;
+}
+
+form{
+    margin-bottom: 50px;
+}

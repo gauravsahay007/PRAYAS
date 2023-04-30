@@ -106,32 +106,18 @@ exports.signup = (req,res) =>{
                     error: "User email doesnot exists"
                 })
             }
-
-            // .authenticate is a custom method created at user.js models
-            // Authentication: Process of verifying a user's identification through the acquisition of credentials and using DATABASE credentials to confirm user identity
             if(!user.authenticate(password)){
                 return res.status(401).json({
                     error : "Email and password donot match"
                 })
             }
 
-            // JSON WEB TOKENS are RFC 7519 open industry standard for representing claims between two parties
-            // JWT specifies a compact and self contained method for communicating information as a JSON object between two parties
-            // It can be signed using SECRET
-
-            // In authentication, when the user successfully logs in using their credentials, a JSON webtoken will be returned, Since tokens are credentials (in the below case the credential is user.id) great care must be taken to prevent security issue,
-            // Whenever the user wants to access a protected route or resource the user agent should send a JWT, in "Authorisation header" usinf the bearer schema
-            // Bearer <token> method sets a number of requirementss to keep authorization secure eg requiring the use of HTTPS
-
-            // Create a JWT TOKEN
-            // here {_id: user._id} is Payload which can be string/object/Buffer  and process.env.SECRET is the secret key to encrypt
+            
             const token = jwt.sign({_id: user._id},process.env.SECRET)
 
-            // put token in cookie 
             
             res.cookie("token",token,{expire: new Date()+9999})
 
-            // send response to front end
             const { _id,name,email ,role} = user;
             return res.json({
                 token,
@@ -142,14 +128,12 @@ exports.signup = (req,res) =>{
   
    
     exports.isSignedIn = expressJwt({
-        // Now in expressJwt first we pass the same SECRET we used to create the token
-        // secret: jwt.Secret | GetVerificationKey (required): The secret as a string or a function to "retrieve" the secret.
+       
         secret: process.env.SECRET,
         algorithms: ["HS256"],
-        // requestProperty?: string (optional): Name of the property in the request object where the payload is set. Default to req.auth
+        
         userProperty: "auth"
 
-        // expressJwt automatically verifies the token
     })
     //Creating a middleware to check if the user is authorized or not
     // a boolean value that indicates whether the current user is authenticated (logged in).
@@ -160,6 +144,9 @@ exports.signup = (req,res) =>{
         // JSON status code 403 :- 403—Forbidden; The account associated with the project that owns the bucket or object has been disabled.
         if(check==false){
             return res.status(403).json({
+                err:req.auth,
+                err2:req.profile.name,
+                err3:req.profile._id,
                 error:"User doesn't exist: Access Denied"
             })
         }

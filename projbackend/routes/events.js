@@ -1,23 +1,27 @@
 var express =require("express");
 var router=express.Router();
 const {isAuthenticated,isAdmin, isSignedIn}=require("../controllers/auth");
-const { getAllevents,getEvent,getEventById, updateEvent,Eventphoto } = require("../controllers/events");
+const { getAllevents,getEvent,getEventById, updateEvent,Eventphoto,createEvent,deleteEvent} = require("../controllers/events");
+ 
+const {getUserById} = require("../controllers/users");
 
 // param fired up when detects :userId in the route
-router.param("userId",getEventById);
+router.param("userId",getUserById);
+router.param("eventId",getEventById);
 
 
-// get user
-router.get("/user/:userId",isSignedIn,isAuthenticated,isAdmin,getEvent);
 
-// get all users
-router.get("/users/:userId",isSignedIn,isAuthenticated,isAdmin,getAllevents)
+router.post("/event/create/:userId",isSignedIn,isAuthenticated,isAdmin,createEvent);
 
-// update user
-router.put("/user/:userId",isSignedIn,isAuthenticated,isAdmin,updateEvent)
+
+router.get("/event/:eventId",isSignedIn,getEvent) 
+router.get("/events",getAllevents)
+
+// update event
+router.put("/event/update/:userId/:eventId",isSignedIn,isAuthenticated,isAdmin,updateEvent);
 router.get("/event/photo/:eventId",Eventphoto);
 
-
+router.delete("/event/delete/:userId/:eventId",isSignedIn,isAuthenticated,isAdmin,deleteEvent)
 
 
 

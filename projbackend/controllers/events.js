@@ -1,4 +1,7 @@
 const Event=require("../models/events");
+const formidable=require("formidable");
+const fs=require("fs");
+const _=require("lodash");
 
 exports.createEvent = (req,res) =>{
 
@@ -57,23 +60,23 @@ exports.getEventById=(req,res,next,id)=>{
             error:"Oops...There is not any user of this id in the database"
         });
     }
-    req.profile=event;
+    req.eventprofile=event;
     next();
     });  
 };
 
 exports.getEvent=(req,res)=>{
-    req.profile.salt = undefined;
-    req.profile.encry_password=undefined;
-    req.profile.photo= undefined;
+    req.eventprofile.salt = undefined;
+    req.eventprofile.encry_password=undefined;
+    req.eventprofile.photo= undefined;
     return res.json(req.profile);
 };
 
 
 exports.Eventphoto = (req, res, next) => {
-    if (req.profile.photo) {
+    if (req.eventprofile.photo) {
         res.set("Content-Type", "image/png");
-      return res.send(req.profile.photo.data);
+      return res.send(req.eventprofile.photo.data);
     }
     next();
   };
@@ -81,15 +84,15 @@ exports.Eventphoto = (req, res, next) => {
     exports.getAllevents=(req,res)=>{
         Event.find()
         .select("-photo")
-        .then((users,err)=>{
+        .then((events,err)=>{
             if(err){
                 res.status(400).json({
-                    error: "No users found"
+                    error: "No events found"
                 })
             }
     
             res.json({
-                users
+               events
             })
         })
 }
@@ -104,7 +107,7 @@ exports.updateEvent=(req,res)=>{
         })
       }
 
-      let newevent=req.profile;
+      let newevent=req.eventprofile;
 
       newevent=_.extend(newevent,fields);
 
@@ -114,11 +117,11 @@ exports.updateEvent=(req,res)=>{
                 error:"File is too big!"
             });
         }
-        newevent.photo.data=fs.readFileSync(file.photo.path);
+        newevent.photo.data=fs.readFileSync(file.photo.filepath);
         newevent.photo.contentType=file.photo.type;
       }
       newevent.save().then((use,err)=>{
-        res.json(newevent);
+        res.json(newevent);  
     }).catch(err => console.log(err));
     
 });
@@ -126,3 +129,13 @@ exports.updateEvent=(req,res)=>{
     
 
 
+exports.deleteEvent=(req,res)=>{
+    const prod=req.eventprofile;
+//The remove() function is used to remove the documents from the database according to the condition
+    prod.deleteOne().then((product,err)=>{
+        res.json({
+            message:"Deleted successfully",
+            product
+        });
+    }).catch(err=>console.log(err));
+}  

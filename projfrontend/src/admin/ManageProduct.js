@@ -51,7 +51,7 @@ const ManageAllProduct=()=>{
                           
                           <div className="image-container">
                           <Imagehelper prod={prod}/>
-                          
+                           
                           </div>
                          <div className="container">
                          <div className="name">

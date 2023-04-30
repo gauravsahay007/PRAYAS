@@ -6,6 +6,7 @@ import "../styles/signin.css"
 import { signin } from '../auth/helper'
 import { isAuthenticated } from '../auth/helper'
 import { authenticate } from '../auth/helper'
+import Menu from '../core/Menu'
 export default function Signin() {
   const [values, setValues] = useState({
     email: "",
@@ -95,7 +96,7 @@ const performRedirect = (Redirect) => {
     )
   return (
     <div>
-      
+      <Menu/>
          {signInForm()}
          {errorMessage()}
          {loadingMessage()}

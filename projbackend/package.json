@@ -21,7 +21,7 @@
     "formidable": "^2.1.1",
     "fs": "^0.0.1-security",
     "lodash": "^4.17.21",
-    "mongoose": "^7.1.0",
+    "mongoose": "^6.10.0",
     "nodemon": "^2.0.22",
     "uuidv1": "^1.6.14"
   }

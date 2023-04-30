@@ -4,10 +4,22 @@ import "../styles/base.css";
 import twitter from "../twitter.png"
 import fb from "../facebook.png"
 import ig from "../instagram.png"
-export default function Base() {
+
+export default function Base({title="",description="",children}) {
   return (
     <div>
-      =
+      <Menu/>
+       <h2>{title}</h2>
+       <p>{description}</p>
+
+       <div>
+
+<div className="content">
+    {children}
+</div>
+
+</div> 
+
       <div className='complete'>
         <div className='f1'>
           <ul>

@@ -1,6 +1,6 @@
 import React,{Fragment, useEffect,useState} from 'react'
 import "./Faq.css"
-
+import Menu from '../core/Menu';
 
 export default function Faq() {
   const [a,setA] = useState(0);
@@ -77,7 +77,7 @@ export default function Faq() {
   
   return (
     <div>
-      {/* <Menu/> */}
+      <Menu/>
          <section>
       <h1 className="title">FAQ's</h1>
 

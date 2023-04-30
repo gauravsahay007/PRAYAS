@@ -4,6 +4,7 @@ import { Link,Navigate } from 'react-router-dom'
 import Base from '../core/Base'
 import { createCategory } from './helper/adminapicalls'
 import "../styles/CreateCategory.css"
+import Menu from '../core/Menu'
 
 const AddCat = () => {
     const [name, setName]= useState("")
