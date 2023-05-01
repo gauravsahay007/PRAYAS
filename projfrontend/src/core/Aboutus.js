@@ -1,10 +1,12 @@
 import React from 'react'
 import "../styles/About.css"
 import child from "../ab.jpg"
+import Menu from './Menu'
 export default function Aboutus() {
   return (
+    
     <div className='comp'>
-      
+      <Menu/>
 			<div className="image">
 <img src={child} alt="background"/>
 <figure>

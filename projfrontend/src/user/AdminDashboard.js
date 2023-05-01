@@ -22,7 +22,7 @@ const AdminDashboard=()=> {
            <li><Link className='link' to="/admin/product/create">Create Product</Link>
             </li>
            <li><Link className='link' to="/admin/product">Manage Product</Link></li>
-           <li><Link className='link' to="/admin/order">Manage Order</Link></li>
+           <li><Link className='link' to="/admin/event/create/:userId">Create Event</Link></li>
         </ul>
         </div>
 

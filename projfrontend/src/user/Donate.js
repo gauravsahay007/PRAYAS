@@ -1,11 +1,12 @@
 import React from 'react'
 import qr from "../qr.png"
 import { useNavigate } from 'react-router-dom';
+import Menu from '../core/Menu';
 export default function Donate() {
     const navigate = useNavigate();
   return (
     <div>
-        {/* <div className='form'> */}
+        <Menu/>
       <form>
             <h1>Donation Form</h1>
             <div>

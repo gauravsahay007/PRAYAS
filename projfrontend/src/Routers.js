@@ -27,6 +27,7 @@ import AdminDashboard from "./user/AdminDashboard";
 import Aboutus from "./core/Aboutus";
 import Donate from "./user/Donate";
 import Merch from "./core/Merch";
+import AddEvent from "./admin/AddEvent";
 export default function Routers(){
     return(
  <BrowserRouter>
@@ -56,6 +57,7 @@ export default function Routers(){
 <Route path="/admin/dashboard" exact element={<AdminDashboard/>}></Route>
 
 <Route path="/admin/category/:categoryId" exact element={<UpdateCategory/>}></Route>
+<Route path="/admin/event/create/:userId" exact element={<AddEvent/>}></Route>
 
 <Route path="/admin/product/update/:productId/:userId" exact element={<UpdateProduct/>}></Route>
 <Route path="/about" exact element={<Aboutus/>}></Route>
